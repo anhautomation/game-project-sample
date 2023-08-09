@@ -1,0 +1,25 @@
+version: '3.8'
+
+networks:
+  microservice-network:
+    driver: bridge
+services:
+  powerball-game-service:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    container_name: powerball-game-service
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - $APP_PORT:$APP_PORT
+    networks:
+      - microservice-network
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+    volumes:
+      - ./prisma/schema.prisma:/usr/src/app/prisma/schema.prisma
+
+volumes:
+  temp-db:

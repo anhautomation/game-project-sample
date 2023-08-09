@@ -1,0 +1,42 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,vue}"],
+  theme: {
+    colors: {
+      transparent: "transparent",
+      white: "#FFFFFF",
+      green: { 500: "#00AB55", 800: "#007B55", 900: "#254A30" },
+      yellow: { 500: "#E0C584", 700: "#E1DA23", 900: "#D8A64C" },
+      red: { 500: "#B80705", 400: "#BB5353" },
+      frame2: "#38405A",
+      mainFrame: "#252A3A",
+      third: "#54618D ",
+      commentList: "#2A3146",
+      background: "#1c1b29",
+      bet: "#414B6A",
+      betHover: "#4C5A84",
+      currentAmount: "#2B3C74",
+      coin1K: "#4A00A0",
+      coin5K: "#9200A0",
+      coin25K: "#A07F00",
+      coin100K: "#A05300",
+      coin500K: "#A00600",
+      coin1M: "#A0003C",
+      coinx2: "#CFA000",
+    },
+    fontFamily: {
+      primary: "PublicSans",
+      squada: "Squada",
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1840px",
+    },
+    extend: {},
+  },
+  plugins: [],
+};

@@ -1,0 +1,25 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model PowerballGameResult {
+  HistoryId     Int      @id @default(autoincrement())
+  Round         Int
+  Date          String
+  GameId        String
+  HashCode      String
+  SaltCode      String
+  GameResult    String
+  CreatedAtUnix Int
+  UpdatedAtUnix Int
+  IsPublished   Boolean  @default(false)
+  IsDeleted     Boolean  @default(false)
+
+  @@unique([Round, Date], name: "RoundPerDay")
+}
